@@ -12,7 +12,7 @@ namespace Example.Controllers
     [Route("api/[controller]")] //burada direk'de route yapabiliriz. ama controller dersek ilgili controller' yönlendiriyoruz.
     public class UsersController:ControllerBase
     {
-        private List<User> _users = FakeData.GetUsers(100);
+        private List<User> _users = FakeData.GetUsers(200);
 
         [HttpGet] //get request'leri için çalışıcak
         public List<User> Get() //metot string olursa return o türden olmalı
@@ -42,7 +42,7 @@ namespace Example.Controllers
             editedUser.FirstName = user.FirstName; //adını değiştirmiştir eşitledik
             editedUser.LastName = user.LastName; // soyadını değiştirmiştir eşitledik.
             editedUser.Address = user.Address; //adresi değiştirmiştir eşitledik.
-            return user;
+            return user; //bakalım düzeltme noluyor.
         }
 
         [HttpDelete("{id}")]
